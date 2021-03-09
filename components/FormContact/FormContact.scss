@@ -1,0 +1,252 @@
+@import '../../styles/variables.scss';
+
+
+form {
+    margin-top: 100px;
+}
+.fifth_hero {
+    width: 100%;
+    padding: 100px 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-light-gray;
+
+    .hero_content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+  
+      .hero_inputs {
+          width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+  
+        .area {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin-bottom: 20px;
+          height: 40px;
+          border: 1px solid $flag-2;
+          border-radius: 5px;
+          box-sizing: border-box;
+  
+          img {
+            padding: 0px 10px;
+            border-right: 1px solid $flag-2;
+          }
+  
+          input {
+            padding: 0px 10px;
+            height: initial;
+            margin-bottom: 0;
+            width: 100%;
+            border: none;
+            transition: border .1s ease-in;
+            font-size: 15px;
+            color: $flag-2;
+          }
+        }
+    
+        textarea {
+          height: 200px;
+          border: 1px solid $flag-2;
+          border-radius: 5px;
+          margin-bottom: 20px;
+          padding: 10px;
+          width: 100%;
+          resize: vertical;
+        }
+  
+        button {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          background: none;
+          background-color: $darkrose;
+          font-size: 1.5em;
+          color: $bg-light-gray;
+          width: 180px;
+          height: 45px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: opacity 0.3s ease-in-out;
+  
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+  
+  
+      .form_map {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+  
+        .hero_map {
+          width: 100%;
+          height: 280px;
+          background-image: url("/map.png");
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+    
+        .hero_phone {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin: 10px;
+          margin-bottom: 0;
+          margin-left: 0;
+  
+          #whatsapp {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+          }
+          
+          p {
+            font-size: 20px;
+            color: $flag-2;
+            cursor: pointer;
+          }
+        }
+  
+        > p {
+          margin-top: 0;
+          font-size: 18px;
+          color: $flag-2;
+        }
+      }
+  
+    }
+  }
+
+
+  .hero_inputs {
+      width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    .area {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin-bottom: 20px;
+      height: 40px;
+      border: 1px solid $flag-2;
+      border-radius: 5px;
+      box-sizing: border-box;
+
+      img {
+        padding: 0px 10px;
+        border-right: 1px solid $flag-2;
+      }
+
+      input {
+        padding: 0px 10px;
+        height: initial;
+        margin-bottom: 0;
+        width: 100%;
+        border: none;
+        transition: border .1s ease-in;
+        font-size: 15px;
+        color: $flag-2;
+      }
+    }
+
+    textarea {
+      height: 200px;
+      border: 1px solid $flag-2;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 10px;
+      width: 100%;
+      resize: vertical;
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: none;
+      background-color: $darkrose;
+      font-size: 1.5em;
+      color: $bg-light-gray;
+      width: 180px;
+      height: 45px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  
+@media (min-width: $desktop-up) {
+  
+
+        .hero_inputs {
+          width: 100%;
+          margin-right: 60px;
+        }
+  
+        .form_map {
+          .hero_map {
+            background-size: cover;
+            height: 378px;
+            background-position: -10vw 0;
+          }
+        }
+      }
+
+      
+  
+  @media (max-width: 1350px) {
+    .fifth_hero {
+      .hero_content {
+        .form_map {
+          .hero_map {
+            background-position: center;
+            background-size: cover;
+            border: 1px solid $flag-2;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (min-width: 1600px) {
+    .fifth_hero {
+      .hero_content {
+        .form_map {
+          .hero_map {
+            background-position: -8vw 0;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (min-width: 1750px) {
+    .fifth_hero {
+      .hero_content {
+        .form_map {
+          .hero_map {
+            background-position: 0vw 0;
+          }
+        }
+      }
+    }
+  }

@@ -6,15 +6,15 @@ export default (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'glauciodaniel.dev@gmail.com',
-      pass: '4rfeAYUcwe=qw21!@'
+      user: '@gmail.com',
+      pass: ''
     }
   });
 
   const mailOptions = {
-    from: 'glauciodaniel.dev@gmail.com',
-    to: 'glaucio@hcode.com.br',
-    bcc: 'joao@hcode.com.br',
+    from: '@gmail.com',
+    to: '@hcode.com.br',
+    bcc: '@hcode.com.br',
     subject: `Hcode Café: ${req.body.subject}`,
     html : `
     <h1 style='font-size:1.5em; text-align:center;'>Contato</h1>

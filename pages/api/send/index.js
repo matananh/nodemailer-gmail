@@ -1,20 +1,50 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const nodemailer = require('nodemailer')
+const { google } = require('googleapis')
+// id do cliente: 458543389651-2ad465vocn7sm48hi2l6ud4o8v4ttj6f.apps.googleusercontent.com
+
+//chave secreta: KhCOJqtohPb2UuLRiExqbVbI
+
+//Refresh token: 1//04ALM1Wub8Es9CgYIARAAGAQSNwF-L9IrbaEetPNWj8bCkwYOJXOLKUudukQTudvbWZLwhug-ua763zc2D4go48gTq7ga_V3-CTw
+
+//OAuth2 Authentication
 
 export default (req, res) => {
  
+  const clientID = "458543389651-2ad465vocn7sm48hi2l6ud4o8v4ttj6f.apps.googleusercontent.com";
+ const secretKey = "KhCOJqtohPb2UuLRiExqbVbI";
+ const refresh_token = "1//04ALM1Wub8Es9CgYIARAAGAQSNwF-L9IrbaEetPNWj8bCkwYOJXOLKUudukQTudvbWZLwhug-ua763zc2D4go48gTq7ga_V3-CTw";
+ const redirectURI = "https://developers.google.com/oauthplayground" 
+  const OAuth2 = google.auth.OAuth2;
+
+  const oauth2Client = new OAuth2(clientID, secretKey, redirectURI);
+
+  oauth2Client.setCredentials({
+    refresh_token
+  })
+
+  const accessToken = oauth2Client.getAccessToken();
+
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    logger: false,
+    debug: false,
     auth: {
-      user: '@gmail.com',
-      pass: ''
+      type: "OAuth2",
+      user: "glauciodaniel.dev@gmail.com",
+      clientId: clientID,
+      clientSecret: secretKey,
+      refreshToken: refresh_token,
+      accessToken
     }
   });
 
   const mailOptions = {
-    from: '@gmail.com',
-    to: '@hcode.com.br',
-    bcc: '@hcode.com.br',
+    from: 'glauciodaniel.dev@gmail.com',
+    to: 'glaucio@hcode.com.br',
+    bcc: 'joao@hcode.com.br',
     subject: `Hcode Café: ${req.body.subject}`,
     html : `
     <h1 style='font-size:1.5em; text-align:center;'>Contato</h1>

@@ -1,4 +1,4 @@
-import css from './FormContact.scss'
+import css from './FormContact.module.scss'
 
 export default function index() {
 
